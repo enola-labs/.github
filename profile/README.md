@@ -36,6 +36,17 @@ When AI coding agents (like **Claude Code**, **Cursor**, or **VS Code Copilot**)
 
 ---
 
+### 📰 Latest Engineering Articles
+
+Read our technical deep-dives on [enola.tech/blog](https://enola.tech/blog):
+<!-- BLOG-POST-LIST:START -->
+* 📖 [We asked enola. to audit HuggingFace's chat-ui. Here's what a staff engineer would notice](https://enola.tech/blog/enola-chatui-sveltekit-benchmark)
+* 📖 [Parsing code is not the same as mapping architecture](https://enola.tech/blog/parsing-code-is-not-mapping-architecture)
+* 📖 [The four memory layers every coding agent needs](https://enola.tech/blog/four-memory-layers-coding-agent)
+<!-- BLOG-POST-LIST:END -->
+
+---
+
 ### 🤝 Connect & Contribute
 
 - 📂 **Primary Repository**: [github.com/enola-labs/enola](https://github.com/enola-labs/enola)
