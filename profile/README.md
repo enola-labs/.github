@@ -26,6 +26,14 @@ An AI agent can write more code in an hour than you can carefully review. Your t
 
 **Enola Labs** builds the tooling that answers that question at the moment it's cheap to fix. Local, deterministic parsers extract a typed dependency graph straight from multi-language source, served to agents over the **Model Context Protocol** — and graded again after the change, so a structural regression is caught in the editing loop rather than in review.
 
+<div align="center">
+
+![enola --explain on Apache Airflow: 68,161 facts across four languages, 23 dependency cycles, and the blast radius of each hotspot, then the architecture pinned as a baseline](https://raw.githubusercontent.com/enola-labs/.github/main/profile/story1-understand.gif)
+
+<sub><b>A codebase enola has never seen.</b> One command — 68,161 facts, four languages, 23 dependency cycles, and the blast radius of every hotspot. Then the architecture is pinned, so the next change can be graded against it.<br/>No config, no API key, no account. Nothing leaves the machine.</sub>
+
+</div>
+
 ---
 
 ### The loop
