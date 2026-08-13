@@ -59,7 +59,7 @@ Runs in your agent (as a hook), in your shell (`enola check`, exit `1` on regres
 
 Only a newly introduced **dependency cycle** fails the build. It's the one finding computed with certainty rather than inferred — Tarjan's SCC over the real import graph — and a gate that fails on exactly one thing is a gate people leave switched on. Everything else (god classes, hotspots, layer violations, complexity outliers) is reported with a confidence score and never breaks your build.
 
-Not a language model, and not embeddings: tree-sitter plus language-specific extractors, a typed fact model, and real graph algorithms. The same commit yields the same answer — across 38 open-source repositories indexed three times each, all 38 produced a byte-identical snapshot ID, over 4.2 million facts with zero parse errors. Nothing leaves your machine.
+Not a language model, and not embeddings: tree-sitter plus language-specific extractors, a typed fact model, and real graph algorithms. The same commit yields the same answer — across 81 open-source repositories indexed three times each, once cold and twice warm, all 81 produced a byte-identical snapshot ID and a byte-identical fact file: 243 runs, over 7 million facts, zero drift. Nothing leaves your machine.
 
 ---
 
@@ -69,8 +69,8 @@ Not a language model, and not embeddings: tree-sitter plus language-specific ext
 * **[`enola-labs/enola-action`](https://github.com/enola-labs/enola-action)** — the GitHub Action. Two lines in a workflow file and every pull request is graded against its own base: new findings as source annotations, the structural delta in the job summary, and the same exit code as `enola check`. No baseline artifact to publish or restore, and the source never leaves the runner.
 
 #### Supported languages & frameworks
-**Go** · **TypeScript / JS** · **Python** · **Java** · **Kotlin** · **Swift** · **Rust** · **C/C++** · **PHP** · **Ruby** · **Svelte** · **Vue** · **OpenAPI** · **gRPC**
-*(Route, DI and storage awareness for Next.js, FastAPI, Django, Spring, Rails, Laravel, SvelteKit, Axum, Compose, SwiftUI, and more)*
+**Go** · **TypeScript / JS** · **Python** · **Java** · **Kotlin** · **Scala** · **Swift** · **Ruby** · **Rust** · **C/C++** · **.NET** (C# / VB.NET / F# / Razor / XAML) · **PHP** · **Dart / Flutter** · **Vue** · **Svelte** · **Ember** · **Terraform** · **Ansible** · **gRPC** · **OpenAPI** · **GraphQL**
+*(Route, DI and storage awareness for Next.js, FastAPI, Django, Spring, Rails, Grape, Laravel, Symfony, SvelteKit, Nuxt, Axum, ASP.NET Core, Play, Compose, SwiftUI, go_router, and more)*
 
 Point it at a second repository and it links them into one graph — a web client's `fetch()` to the backend route that serves it, a mobile endpoint enum to that same route, a gRPC call site to the `.proto` service behind it — so an agent can answer *if I change this endpoint, which screens break?* by traversal instead of inference.
 
