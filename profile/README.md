@@ -10,7 +10,8 @@
 
 <p align="center">
   <a href="https://github.com/enola-labs/enola">enola</a> •
-  <a href="https://github.com/enola-labs/enola#set-it-up">Set it up</a> •
+  <a href="https://github.com/enola-labs/enola-action">GitHub Action</a> •
+  <a href="https://github.com/enola-labs/enola#quickstart">Quickstart</a> •
   <a href="https://github.com/enola-labs/enola/blob/main/docs/CLI.md">CLI</a> •
   <a href="https://github.com/enola-labs/enola/blob/main/docs/BENCHMARKS.md">Benchmarks</a> •
   <a href="https://github.com/enola-labs/enola/blob/main/ARCHITECTURE.md">Architecture</a>
@@ -54,7 +55,7 @@ New coupling (5):
   invoice                                      --imports--> billing
 ```
 
-Runs in your agent (as a hook), in your shell (`enola check`, exit `1` on regression), and in CI — the same command and the same exit code in all three.
+Runs in your agent (as a hook), in your shell (`enola check`, exit `1` on regression), and in CI via the [GitHub Action](https://github.com/enola-labs/enola-action) — the same command and the same exit code in all three.
 
 Only a newly introduced **dependency cycle** fails the build. It's the one finding computed with certainty rather than inferred — Tarjan's SCC over the real import graph — and a gate that fails on exactly one thing is a gate people leave switched on. Everything else (god classes, hotspots, layer violations, complexity outliers) is reported with a confidence score and never breaks your build.
 
@@ -65,6 +66,7 @@ Not a language model, and not embeddings: tree-sitter plus language-specific ext
 ### Ecosystem
 
 * **[`enola-labs/enola`](https://github.com/enola-labs/enola)** — the engine: extractors, cross-repo linker, MCP server, CLI and the `check` gate. Written in Go, Apache 2.0, and it is the *whole* engine — nothing gated, metered or degraded behind a key.
+* **[`enola-labs/enola-action`](https://github.com/enola-labs/enola-action)** — the GitHub Action. Two lines in a workflow file and every pull request is graded against its own base: new findings as source annotations, the structural delta in the job summary, and the same exit code as `enola check`. No baseline artifact to publish or restore, and the source never leaves the runner.
 
 #### Supported languages & frameworks
 **Go** · **TypeScript / JS** · **Python** · **Java** · **Kotlin** · **Swift** · **Rust** · **C/C++** · **PHP** · **Ruby** · **Svelte** · **Vue** · **OpenAPI** · **gRPC**
